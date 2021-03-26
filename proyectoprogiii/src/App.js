@@ -1,8 +1,11 @@
 import React from 'react';
+import Items from './components/Items'
 
 function App() {
   return (
-    <p>React</p>
+    <div className = "App">
+      < Items />
+    </div>
   );
 }
 
