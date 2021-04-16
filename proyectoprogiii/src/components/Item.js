@@ -1,7 +1,5 @@
 import React from 'react';
-import Item from './Item'
-
-function Items () {
+function Item () {
     return (
      
      <div className="item-conteiner"> 
@@ -17,4 +15,4 @@ function Items () {
     );
 }
 
-export default Items;
+export default Item;

@@ -22,3 +22,38 @@
     height: 10%;
 
 }
+
+.modal-background{
+width: 100vw;
+height: 100vh;
+background-color: rgb(0, 0, 0, 0.3);
+position: absolute;
+top: 0;
+left: 0;
+}
+
+.modal{
+background-color: white;
+padding: 20px;
+width: fit-content;
+margin-top: 25%;
+}
+
+.modal .delete {
+    background-color: red;
+color: white;
+}
+
+.Addcard {
+ 
+   position: fixed;
+   bottom: 0;
+   right:0;
+
+}
+
+.Addcard button {
+    background-color: green;
+    color: white; 
+    
+}
