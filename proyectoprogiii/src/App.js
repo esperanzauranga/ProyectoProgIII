@@ -4,11 +4,11 @@ import Modal from './components/Modal'
 import "./app.css"
 import Addcard from './components/Addcard'
 import Filtros from './components/Filtros';
+import NewCardForm from "./components/NewCardForm"
 function App() {
   return (
     <div className = "App">
       <Filtros/>
-      <Modal/>
       < Item />
       < Item />
       < Item />
@@ -17,7 +17,7 @@ function App() {
       < Item />
       < Item />
       <Addcard/>
-      
+      <NewCardForm/>
     </div>
   );
 }
