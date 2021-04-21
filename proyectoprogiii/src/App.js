@@ -1,5 +1,5 @@
 import React from 'react';
-import Item from './components/Item'
+import ItemsConteiner from './components/ItemsConteiner'
 import Modal from './components/Modal'
 import "./app.css"
 import Addcard from './components/Addcard'
@@ -15,15 +15,10 @@ function App() {
 
       <div className = "App">
         <Filtros/>
-        < Item />
-        < Item />
-        < Item />
-        < Item />
-        < Item />
-        < Item />
-        < Item />
+        < ItemsConteiner />
+       
         <Addcard/>
-        <NewCardForm/>
+    
       </div>
 
       <footer>
