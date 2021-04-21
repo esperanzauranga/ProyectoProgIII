@@ -1,5 +1,5 @@
 import React from 'react'
-function Modal (){
+function Modal ({item}){
     return (
         <div className='modal-background'>
          

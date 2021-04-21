@@ -12,7 +12,7 @@ class ItemsConteiner extends Component {
         this.fetchCall('https://randomuser.me/api/?results=15')
     }
     componentDidUpdate(){
-       
+       console.log (this.state.items)
     }
     fetchCall(url){
         fetch(url)
