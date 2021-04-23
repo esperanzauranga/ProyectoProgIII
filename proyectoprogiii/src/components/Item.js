@@ -26,20 +26,21 @@ class Item extends Component{
      return (
             <li>
                 {mostrarDetelle? <Modal item={item}/>:null }
-                 <div onClick={()=>this.abrirDetalle()} class="uk-card uk-card-default">
+                <div onClick={()=>this.abrirDetalle()} class="uk-card uk-card-default">
                     <div class="uk-card-media-top">
                         <img src={item.picture.large} alt=""/>
                     </div>
                     <div class="uk-card-body">
-                    <p>Apellido: {item.name.last}</p> 
-                  <p>Nombre: {item.name.first}</p> 
-                 <p>Email: {item.email} </p> 
-                  <p>Fecha de nacimiento: {item.registered.date}</p> 
+                        <p>Apellido: {item.name.last}</p> 
+                        <p>Nombre: {item.name.first}</p> 
+                        <p>Email: {item.email} </p> 
+                        <p>Fecha de nacimiento: {item.registered.date}</p> 
+                        <button className='btnDetalle'>Abrir detalle</button>
                     </div>
                 </div>
   
-                </li>
-         );
+            </li>
+        );
     }
 }
 
