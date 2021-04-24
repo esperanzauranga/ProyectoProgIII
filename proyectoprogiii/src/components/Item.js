@@ -26,7 +26,8 @@ class Item extends Component{
      return (
             <li>
                 {mostrarDetelle? <Modal item={item}/>:null }
-                <div onClick={()=>this.abrirDetalle()} class="uk-card uk-card-default">
+                <div class="uk-card uk-card-default">
+                    <button className="btnEliminar">X</button>
                     <div class="uk-card-media-top">
                         <img src={item.picture.large} alt=""/>
                     </div>
@@ -35,7 +36,7 @@ class Item extends Component{
                         <p>Nombre: {item.name.first}</p> 
                         <p>Email: {item.email} </p> 
                         <p>Fecha de nacimiento: {item.registered.date}</p> 
-                        <button className='btnDetalle'>Abrir detalle</button>
+                        <button className='btnDetalle' onClick={()=>this.abrirDetalle()} >Abrir detalle</button>
                     </div>
                 </div>
   
