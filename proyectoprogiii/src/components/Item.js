@@ -4,16 +4,26 @@ import Modal from "./Modal"
 class Item extends Component{ 
     constructor ({item}) {
         super()
-         this.state={
-             item,
-             mostrarDetelle: false
-            }
+        this.state={
+            item,
+            mostrarDetelle: false,
+            tarjetaEliminada: true
+        }
     
     }
+
     abrirDetalle () {
         this.setState ({
             item:this.state.item,
             mostrarDetelle:true
+        })
+    }
+
+    eliminarTarjeta () {
+        this.setState({
+           item:this.state.item,
+           tarjetaEliminada: false,
+            
         })
     }
 
@@ -27,7 +37,7 @@ class Item extends Component{
             <li>
                 {mostrarDetelle? <Modal item={item}/>:null }
                 <div class="uk-card uk-card-default">
-                    <button className="btnEliminar">X</button>
+                    <button className="btnEliminar" onClick={()=>this.eliminarTarjeta()} >X</button>
                
                     <div class="uk-card-media-top">
                         <img src={item.picture.large} alt=""/>

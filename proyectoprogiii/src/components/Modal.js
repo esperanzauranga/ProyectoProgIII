@@ -8,7 +8,7 @@ class Modal extends Component{
             mostrarDetalle:true
         }
     }
-
+// esto no me sale
    cerrarDetalle () {
     this.setState ({
         mostrarDetelle:false
