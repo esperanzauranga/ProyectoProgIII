@@ -9,7 +9,7 @@ class Item extends Component{
             mostrarDetelle: false,
             tarjetaEliminada: true
         }
-    
+        this.cerrarDetalle = this.cerrarDetalle.bind(this);
     }
 
     abrirDetalle () {

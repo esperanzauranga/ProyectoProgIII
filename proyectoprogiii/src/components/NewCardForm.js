@@ -13,16 +13,20 @@ constructor (){
         cp:'',
         telefono:''
     }
+    this.handleChange = this.handleChange.bind(this);
+    this.submitForm = this.submitForm.bind(this);
 }
 handleChange (e){
     this.setState({
         ...this.state,
         [e.target.name]: e.target.value
     })
+
 }
 
 submitForm (){
-console.log(this.state)
+this.props.addNewUser (this.state)
+
 }
 
 render(){

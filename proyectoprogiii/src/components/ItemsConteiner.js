@@ -1,35 +1,7 @@
 import React, {Component} from 'react'
 import Item from './Item'
-class ItemsConteiner extends Component {
-    constructor () {
-        super() 
-        this.state={
-             items: []
-        }
-    }
-
-    componentDidMount(){
-        this.fetchCall('https://randomuser.me/api/?results=15')
-    }
-    componentDidUpdate(){
-       console.log (this.state.items)
-    }
-    fetchCall(url){
-        fetch(url)
-        .then (resultado=>{
-            return resultado.json()
-        
-        })
-        .then(usuarios=>{
-            
-            this.setState({items:usuarios.results})
-        })
-        .catch (error=>{console.log(error)})
-        
-    }
-
-    render () {
-        const {items} = this.state
+function ItemsConteiner ({items}) {
+     
         return (
     <div class="uk-slider-container-offset" uk-slider>
 
@@ -58,6 +30,6 @@ class ItemsConteiner extends Component {
 
 )
     }
-}
+
 
 export default ItemsConteiner

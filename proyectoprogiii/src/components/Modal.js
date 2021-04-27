@@ -1,11 +1,7 @@
 import React, { Component } from 'react'
 
-function Modal ({item}, cerrarDetalle) {
+function Modal ({item, cerrarDetalle}) {
     
-
-
-    
-
 
 
         return (
