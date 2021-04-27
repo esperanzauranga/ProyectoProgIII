@@ -18,7 +18,12 @@ class Item extends Component{
             mostrarDetelle:true
         })
     }
-
+    cerrarDetalle () {
+        this.setState ({
+            item:this.state.item,
+            mostrarDetelle:false
+        })
+    }
     eliminarTarjeta () {
         this.setState({
            item:this.state.item,
@@ -35,7 +40,7 @@ class Item extends Component{
     
      return (
             <li>
-                {mostrarDetelle? <Modal item={item}/>:null }
+                {mostrarDetelle? <Modal cerrarDetalle={this.cerrarDetalle} item={item}/>:null }
                 <div class="uk-card uk-card-default">
                     <button className="btnEliminar" onClick={()=>this.eliminarTarjeta()} >X</button>
                

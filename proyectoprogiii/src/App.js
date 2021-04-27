@@ -6,8 +6,8 @@ import Addcard from './components/Addcard'
 import Filtros from './components/Filtros';
 import NewCardForm from "./components/NewCardForm"
 
-function App() {
-  return (
+class App extends React.Component {
+ render (){ return (
     <React.Fragment>
       <header className = 'header'>
         <h1>HEADER</h1>
@@ -27,6 +27,7 @@ function App() {
 
     </React.Fragment>
   );
+ }
 }
 
 export default App;
