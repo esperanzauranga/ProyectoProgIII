@@ -7,7 +7,6 @@ class Item extends Component{
         this.state={
             item,
             mostrarDetelle: false,
-            tarjetaEliminada: true
         }
     
     }
@@ -15,18 +14,21 @@ class Item extends Component{
     abrirDetalle () {
         this.setState ({
             item:this.state.item,
-            mostrarDetelle:true
+            mostrarDetelle:true,
+            idUsuarioEliminado: this.state.key
         })
     }
 
-    eliminarTarjeta () {
-        this.setState({
-           item:this.state.item,
-           tarjetaEliminada: false,
-            
-        })
-    }
+    // eliminarTarjeta = (idUsuarioEliminado) => {
+    //     let resultado = this.state.item.filter((item)=> {
+    //         return item !== idUsuarioEliminado;
+    //     })
+    //     this.setState ({item: resultado});
+    // }
 
+    // reset (){
+    //     this.setState({item: this.state.itemOriginales})
+    // }
 
  
 
