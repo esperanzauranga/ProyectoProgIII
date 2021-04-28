@@ -9,16 +9,16 @@ class Item extends Component{
             mostrarDetelle: false,
         }
         this.cerrarDetalle = this.cerrarDetalle.bind(this);
-    }
+    };
+
+    
 
     abrirDetalle () {
         this.setState ({
             item:this.state.item,
             mostrarDetelle:true,
-            idUsuarioEliminado: this.state.key
         })
     }
-<<<<<<< HEAD
 
     // eliminarTarjeta = (idUsuarioEliminado) => {
     //     let resultado = this.state.item.filter((item)=> {
@@ -26,26 +26,24 @@ class Item extends Component{
     //     })
     //     this.setState ({item: resultado});
     // }
-=======
+
+
+    borrarItem(event){
+        let idTarjetaEliminada= event.id.value
+        console.log(idTarjetaEliminada);
+        //  let resultados = this.state.item.filter((items)=> {
+        //      return (idUsuarioEliminado!==item.login.uuid)
+        //     })
+
+        // this.setState({item:resultados})
+    }
+
     cerrarDetalle () {
         this.setState ({
             item:this.state.item,
             mostrarDetelle:false
         })
     }
-    eliminarTarjeta () {
-        this.setState({
-           item:this.state.item,
-           tarjetaEliminada: false,
-            
-        })
-    }
->>>>>>> main
-
-    // reset (){
-    //     this.setState({item: this.state.itemOriginales})
-    // }
-
  
 
     render() {
@@ -55,7 +53,7 @@ class Item extends Component{
             <li>
                 {mostrarDetelle? <Modal cerrarDetalle={this.cerrarDetalle} item={item}/>:null }
                 <div class="uk-card uk-card-default">
-                    <button className="btnEliminar" onClick={()=>this.eliminarTarjeta()} >X</button>
+                    <button className="btnEliminar" onClick={()=>this.borrarItem()} >X</button>
                
                     <div class="uk-card-media-top">
                         <img src={item.picture.large} alt=""/>
