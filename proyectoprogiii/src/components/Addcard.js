@@ -1,8 +1,10 @@
 import React from 'react'
-function Addcard (){
+class Addcard extends React.Component{
+render(){
 return(
- <div className='Addcard'><button>Agregar</button></div>   
+ <div className='Addcard'><button onClick={()=>this.props.showNewUserForm()}>Agregar</button></div>   
 )
+}
 }
 
 export default Addcard

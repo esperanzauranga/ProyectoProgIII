@@ -1,28 +1,60 @@
 import React from "react"
-function NewCardForm() {
-return(
+class NewCardForm extends React.Component {
+constructor (){
+    super()
+    this.state= {
+        nombre:'',
+        apellido:'',
+        email:'',
+        fechadenacimiento:'',
+        calle:'',
+        ciudad:'',
+        pais:'',
+        cp:'',
+        telefono:''
+    }
+    this.handleChange = this.handleChange.bind(this);
+    this.submitForm = this.submitForm.bind(this);
+}
+handleChange (e){
+    this.setState({
+        ...this.state,
+        [e.target.name]: e.target.value
+    })
+
+}
+
+submitForm (){
+this.props.addNewUser (this.state)
+
+}
+
+render(){
+     return(
     <div className="modal-background"> 
         <div className="modal">
         <label>Nombre</label>
-        <input name="nombre"/>
+        <input onChange={this.handleChange} name="nombre"/>
         <label>Apellido</label>
-        <input name="apellido"/>
+        <input onChange={this.handleChange} name="apellido"/>
         <label>Email</label>
-        <input name="email"/>
+        <input onChange={this.handleChange}  name="email"/>
         <label>Fecha de nacimiento</label>
-        <input name="fechadenacimiento"/>
+        <input onChange={this.handleChange} name="fechadenacimiento"/>
         <label>Calle y numero</label>
-        <input name="calle"/>
+        <input onChange={this.handleChange} name="calle"/>
         <label>Ciudad y estado</label>
-        <input name="ciudad"/>
+        <input onChange={this.handleChange} name="ciudad"/>
         <label>Pais</label>
-        <input name="pais"/>
+        <input onChange={this.handleChange} name="pais"/>
         <label>Codigo postal</label>
-        <input name="cp"/>
+        <input onChange={this.handleChange} name="cp"/>
         <label>Telefono</label>
-        <input name="telefono"/>
+        <input onChange={this.handleChange} name="telefono"/>
+        <button onClick={this.submitForm}>Agregar</button>
         </div>
     </div>
 ) 
+}
 }
 export default NewCardForm

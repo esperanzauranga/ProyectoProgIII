@@ -1,31 +1,15 @@
 import React, { Component } from 'react'
 
-class Modal extends Component{
-    constructor ({item}) {
-        super ()
-        this.state={
-            item,
-            mostrarDetalle:true
-        }
-    }
-// esto no me sale
-   cerrarDetalle () {
-    this.setState ({
-        mostrarDetelle:false
-    })
-   }
-
+function Modal ({item, cerrarDetalle}) {
     
 
-    render() {
-        const {item,mostrarDetalle} = this.state
 
         return (
             <li>
                 <div className='modal-background'>
          
                     <div className='modal'>
-                        <button onClick={()=>this.cerrarDetalle()} >X</button>
+                        <button onClick={cerrarDetalle} >X</button>
                         <p>calle y numero: {item.location.street.name}  {item.location.street.number}</p>
                         <p>ciudad/estado: {item.location.city}, {item.location.state}</p>
                         <p>pais: {item.location.country}</p>
@@ -39,7 +23,7 @@ class Modal extends Component{
                 </div>
             </li>
         )
-    }
+    
 }
 
 export default Modal;
