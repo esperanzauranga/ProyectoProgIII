@@ -29,12 +29,15 @@ class ItemsConteiner extends Component {
                     <p>No hay resultados</p>
                 )
             }
+
+        
             return (
-                <div class="uk-slider-container-offset" uk-slider>
+                <div className="item-conteiner">
+                <div className="uk-slider-container-offset"  uk-slider>
             
-                <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1">
+                <div className="uk-position-relative uk-visible-toggle uk-light" tabindex="-1">
             
-                    <ul class="uk-slider-items uk-child-width-1-2@s uk-grid">
+                    <ul className="uk-slider-items uk-child-width-1-2@s uk-grid">
                     {
                         items.map((item)=>{
                             return <Item
@@ -47,15 +50,15 @@ class ItemsConteiner extends Component {
                        
                     </ul>
             
-                    <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
-                    <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
+                    <a className="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
+                    <a className="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
             
                 </div>
             
-                <ul class="uk-slider-nav uk-dotnav uk-flex-center uk-margin"></ul>
+                <ul className="uk-slider-nav uk-dotnav uk-flex-center uk-margin"></ul>
             
             </div>
-            
+            </div>
             )
         }
        
