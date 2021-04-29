@@ -5,7 +5,7 @@ function Modal ({item, cerrarDetalle}) {
 
 
         return (
-            <li>
+           
                 <div className='modal-background'>
          
                     <div className='modal'>
@@ -16,12 +16,13 @@ function Modal ({item, cerrarDetalle}) {
                         <p>codigo postal: {item.location.postcode}</p>
                         <p>fecha de registro: {item.registered.date}</p>
                         <p>telefono: {item.phone}</p>
+                         <p>edad: {item.dob.age}</p>
 
                     </div>
                     
 
                 </div>
-            </li>
+           
         )
     
 }

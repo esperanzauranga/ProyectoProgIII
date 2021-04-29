@@ -1,26 +1,33 @@
 import React, {Component} from 'react'
 import Item from './Item'
 class ItemsConteiner extends Component {
-     constructor(props){
-         super(props)
-         console.log (props)
+     constructor(){
+         super()
+        
          this.state={
              items:[]
          }
         }
         componentDidUpdate(){
-            console.log(this.props.items)
+           if (this.props.items !== this.state.items){
+               this.setState({
+                   ...this.state,
+                   items: this.props.items
+               })
+           }
             
         
         }
 
-        componentDidMount() {
-            console.log(this.props)
-            
-        }
+        componentDidMount() {}
        
         render(){
-            const {items} = this.props
+            const {items} = this.state
+            if (items.length<= 0) {
+                return (
+                    <p>No hay resultados</p>
+                )
+            }
             return (
                 <div class="uk-slider-container-offset" uk-slider>
             
@@ -28,9 +35,9 @@ class ItemsConteiner extends Component {
             
                     <ul class="uk-slider-items uk-child-width-1-2@s uk-grid">
                     {
-                        items.map((item,idx)=>{
+                        items.map((item)=>{
                             return <Item
-                                    key={idx}
+                                    key={item.id}
                                     item={item}
                             />
                         })

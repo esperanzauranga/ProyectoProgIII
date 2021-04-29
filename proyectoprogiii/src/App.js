@@ -33,14 +33,20 @@ fetchCall(url){
     
     })
     .then(usuarios=>{
-        
+        this.configUserFetch(usuarios.results)
         this.setState({items:usuarios.results})
     })
     .catch (error=>{console.log(error)})
     
 }
+// para que muestre mejor l fecha
+configUserFetch (usuarios) {
+usuarios.map ((usuario,idx) => {
+  usuario.id = idx
+  usuario.registered.date= usuario.registered.date.split('T')[0]
+})
 
-
+}
 
   addNewUser (newUser){
     let userConfig= {
@@ -94,20 +100,42 @@ fetchCall(url){
 
     if(filterIt.nombre){
 
-     this.state.filterItems.push(  this.state.items.filter(item =>{
+     tempValues.push(  this.state.items.filter(item =>{
        
-        if(item.name.first.toUpperCase()===filterIt.nombre.toUpperCase()) {
+        if(item.name.first.toUpperCase().includes(filterIt.nombre.toUpperCase())) {
           
           return item
         }
       }))
      
     }
+    if(filterIt.apellido){
 
+      tempValues.push(  this.state.items.filter(item =>{
+        
+         if(item.name.last.toUpperCase()===filterIt.apellido.toUpperCase()) {
+           
+           return item
+         }
+       }))
+      
+     }
+     if(filterIt.edad){
+
+      tempValues.push(  this.state.items.filter(item =>{
+        
+         if(item.dob.age.toString()===filterIt.edad.toString()) {
+           
+           return item
+         }
+       }))
+      
+     }
+  
    })
     this.setState({
       ...this.state,
-      filterItems:this.state.filterItems,
+      filterItems:tempValues[0],
       hasFilters: true
     })
    
