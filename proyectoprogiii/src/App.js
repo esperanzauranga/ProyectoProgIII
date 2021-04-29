@@ -174,7 +174,24 @@ usuarios.map ((usuario,idx) => {
     })
   }
   addUsersToList(amount=5){
-    this.fetchCall ('https://randomuser.me/api/?results='+ amount)
+    fetch("https://randomuser.me/api/?results="+amount)
+    .then (resultado=>{
+        return resultado.json()
+    
+    })
+    .then(usuarios=>{
+        this.configUserFetch(usuarios.results)
+        let tempUsuarios=usuarios.results.map(usuario=>{
+          this.state.items.push(usuario)
+        })
+        console.log (tempUsuarios)
+        console.log (amount)
+        this.setState({
+          ...this.state, 
+          items:this.state.items
+        })
+    })
+    .catch (error=>{console.log(error)})
   }
  render (){ 
    const {showaddcard,items,hasFilters,filterItems}=this.state
