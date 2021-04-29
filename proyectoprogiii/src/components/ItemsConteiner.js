@@ -23,6 +23,7 @@ class ItemsConteiner extends Component {
        
         render(){
             const {items} = this.state
+            
             if (items.length<= 0) {
                 return (
                     <p>No hay resultados</p>
@@ -39,6 +40,7 @@ class ItemsConteiner extends Component {
                             return <Item
                                     key={item.id}
                                     item={item}
+                                    deleteItem= {this.props.deleteItem}
                             />
                         })
                     }

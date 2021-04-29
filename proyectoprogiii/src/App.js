@@ -17,6 +17,8 @@ class App extends React.Component {
     this.fetchCall = this.fetchCall.bind(this)
     this.filter = this.filter.bind(this)
     this.clearFilter = this.clearFilter.bind(this)
+    this.deleteItem = this.deleteItem.bind(this)
+    this.addUsersToList = this.addUsersToList.bind(this)
   }
   
 
@@ -34,7 +36,9 @@ fetchCall(url){
     })
     .then(usuarios=>{
         this.configUserFetch(usuarios.results)
-        this.setState({items:usuarios.results})
+        this.setState({
+          ...this.state, 
+          items:usuarios.results})
     })
     .catch (error=>{console.log(error)})
     
@@ -155,7 +159,23 @@ usuarios.map ((usuario,idx) => {
     })
     
   }
-
+  deleteItem (itemId) {
+  // let tempItems= this.state.items.filter(item=>{
+  //  if (item.id!==itemId) return item
+  //})
+    this.setState({
+      ...this.state,
+      items: this.state.items.filter(item=>{
+        if (item.id!==itemId) return item
+      }),
+      filterItems: this.state.filterItems.filter(item=>{
+        if (item.id!==itemId) return item
+      })
+    })
+  }
+  addUsersToList(amount=5){
+    this.fetchCall ('https://randomuser.me/api/?results='+ amount)
+  }
  render (){ 
    const {showaddcard,items,hasFilters,filterItems}=this.state
    return (
@@ -166,9 +186,9 @@ usuarios.map ((usuario,idx) => {
 
       <div className = "App">
         <Filtros filter={this.filter} clearFilter={this.clearFilter}/>
-       {hasFilters ? < ItemsConteiner items={filterItems} /> : < ItemsConteiner items={items} />}
+       {hasFilters ? < ItemsConteiner items={filterItems}  deleteItem={this.deleteItem} /> : < ItemsConteiner items={items} deleteItem={this.deleteItem} />}
        {showaddcard ? <NewCardForm addNewUser={this.addNewUser}/> : null}
-        <Addcard showNewUserForm={this.showNewUserForm}/>
+        <Addcard showNewUserForm={this.showNewUserForm} addUsersToList={this.addUsersToList}/>
     
       </div>
 

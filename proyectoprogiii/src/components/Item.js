@@ -20,23 +20,7 @@ class Item extends Component{
         })
     }
 
-    // eliminarTarjeta = (idUsuarioEliminado) => {
-    //     let resultado = this.state.item.filter((item)=> {
-    //         return item !== idUsuarioEliminado;
-    //     })
-    //     this.setState ({item: resultado});
-    // }
 
-
-    borrarItem(event){
-        let idTarjetaEliminada= event.id.value
-        console.log(idTarjetaEliminada);
-        //  let resultados = this.state.item.filter((items)=> {
-        //      return (idUsuarioEliminado!==item.login.uuid)
-        //     })
-
-        // this.setState({item:resultados})
-    }
 
     cerrarDetalle () {
         this.setState ({
@@ -53,7 +37,7 @@ class Item extends Component{
             <li>
                 {mostrarDetelle? <Modal cerrarDetalle={this.cerrarDetalle} item={item}/>:null }
                 <div class="uk-card uk-card-default">
-                    <button className="btnEliminar" onClick={()=>this.borrarItem()} >X</button>
+                    <button className="btnEliminar" onClick={()=>this.props.deleteItem(item.id)} >X</button>
                
                     <div class="uk-card-media-top">
                         <img src={item.picture.large} alt=""/>
