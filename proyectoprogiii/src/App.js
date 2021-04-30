@@ -198,7 +198,7 @@ class App extends React.Component {
     return (
       <React.Fragment>
         <header className = 'header'>
-          <h1>HEADER</h1>
+          <h1>My Contacts</h1>
         </header>
 
         <div className = "App">

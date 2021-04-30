@@ -44,12 +44,12 @@ render (){
     const {nombre,apellido,edad} = this.state
      return (
     <div className='filterContainer'>
-        <p>Filtros</p>
+        <p>Filtrar por</p>
         <input type='text' placeholder='nombre' name="nombre" onChange={this.handleChange} value={nombre} />
         <input type='text' placeholder='apellido' name="apellido" onChange={this.handleChange} value={apellido} />
         <input type='number' placeholder='edad' name="edad" onChange={this.handleChange} value={edad} />
-        <button onClick={()=>this.handleSubmit()}>filtrar</button>
-        <button onClick={()=>this.handleClear()}>Limpiar filtros</button>
+        <button onClick={()=>this.handleSubmit()}>Filtrar</button>
+        <button onClick={()=>this.handleClear()}>Quitar filtros</button>
     </div>
     )
 }
