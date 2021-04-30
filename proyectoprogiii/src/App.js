@@ -1,3 +1,4 @@
+//importo los componentes para poder llamarlos dps
 import React from 'react';
 import ItemsConteiner from './components/ItemsConteiner'
 import Modal from './components/Modal'
